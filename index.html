@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sliding Gallery</title>
+</head>
+<body>
+    <div class="gallery">
+        <div class="display">
+            <img src="image1.jpg" alt="Displayed Image">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+        <div class="thumbnails">
+            <img src="assets/1 (1).jpg" alt="Thumbnail 1" class="active">
+            <!-- Add more thumbnails as needed -->
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="style.css">
+
+<script>
+    // script.js
+
+for (let i = 0; i < 25; i++) {
+    const parent = document.querySelector('.thumbnails');
+// add img tag to parent
+const img = document.createElement('img');
+img.src = `assets/1 (${i}).jpg`;
+parent.appendChild(img);
+}
+
+
+
+const thumbnails = document.querySelectorAll('.thumbnails img');
+const display = document.querySelector('.display img');
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        // Update the displayed image source
+        display.src = thumbnail.src;
+
+        // Highlight the clicked thumbnail
+        thumbnails.forEach(t => t.classList.remove('active'));
+        thumbnail.classList.add('active');
+        document.getElementsByTagName('body')[0].style.backgroundImage = `url("${display.src}")`;
+    });
+});
+
+// Set the first thumbnail as active initially
+//thumbnails.classList.add('active');
+display.src = thumbnails[0].src
+thumbnails[0].src = display.src 
+</script>
