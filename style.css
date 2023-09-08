@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(19, 18, 18, 0.97);
+    /* background-image: linear-gradient(45deg, #000000 0%, #434343 100%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(7px); /* You can adjust the blur radius as needed */
+    /* background-image: url("http://127.0.0.1:5500/assets/1%20(7).jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    
+  /* background-color: rgba(255, 255, 255, 0.5);   */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 1000px;
+    height: 100vh;
+    position: relative;
+    /* border: #007bff 2px solid; */
+}
+
+.prev,
+.next {
+    /* align-self: baseline; */
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  /* translate: -100px; */
+  /* left: 0; */
+}
+
+.prev {
+    left: 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+
+.thumbnails {
+    /* background-color: aliceblue; */
+    width: 1000px;
+    display: flex;
+    /* justify-content: center; */
+    /* gap: 10px; */
+    margin-bottom: 30px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnails img:hover {
+    border-color: #007bff;
+}
+
+.display img {
+    width: 1000px;
+    height: 500px;
+}
+
+
+
+.demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
