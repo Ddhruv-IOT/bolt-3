@@ -46,11 +46,19 @@ thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', () => {
         // Update the displayed image source
         display.src = thumbnail.src;
+        thumbnail.style.border = '2px solid yellow';
 
         // Highlight the clicked thumbnail
         thumbnails.forEach(t => t.classList.remove('active'));
+       thumbnails.forEach(t => t.style.border = '2 px solid transparent');
+        //thumbnails.forEach(t => t.style.opacity = '0.8');
+
+
         thumbnail.classList.add('active');
         document.getElementsByTagName('body')[0].style.backgroundImage = `url("${display.src}")`;
+        thumbnail.style.border = '2px solid red';
+        thumbnail.style.opacity = '1';
+
     });
 });
 
