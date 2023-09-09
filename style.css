@@ -17,6 +17,7 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    transition: 1s;
     
   /* background-color: rgba(255, 255, 255, 0.5);   */
 }
@@ -83,18 +84,27 @@ body {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid black;
 }
 
 .thumbnails img:hover {
     border-color: #007bff;
 }
 
-.display img {
+.display > .image-container >img {
+    opacity: 0;
+    inset: 0;
     width: 1000px;
     height: 500px;
+    /* transition: 2s; */
+    transition: 2s opacity ease-in-out;
+    transition: 2s;
 }
 
+/* .display > .image-container >img.active {
+    opacity: 1;
+    /* transition: 200ms opacity ease-in-out; /*/
+} */
 
 
  /* .thumbnails {
