@@ -97,11 +97,11 @@ body {
 
 
 
-.demo {
-    opacity: 0.6;
-  }
+ /* .thumbnails {
+    opacity: 0.8;
+  } */
   
-  .active,
-  .demo:hover {
+ 
+  /* .thumbnails:hover {
     opacity: 1;
-  }
+  } */
