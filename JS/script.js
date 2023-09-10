@@ -69,10 +69,11 @@ display.src = thumbnails[0].src
 display.style.opacity = '1';
 document.getElementsByTagName('body')[0].style.backgroundImage = `url("${display.src}")`;
 
-let current = 1;
+let current = -1;
 let prev = 0;
-scroll_curr = 100;
+scroll_curr = 0;
 scroll_step = 100;
+
 setInterval(() => {
 //     const thumbnails = document.querySelectorAll('.thumbnails img');
 // const display = document.querySelector('.display img');
@@ -83,7 +84,29 @@ for (let i = 0; i <= thumbnails.length; i++) {
         break;
     }
     console.log(current, prev);
-    if (prev !== current) {
+
+    // if (current % 10 == 0) {
+    //     scroll_curr = 500;
+    // }
+
+    if( current == thumbnails.length - 1){
+        prev = 0;
+        document.querySelector('.thumbnails').scrollTo({
+            left: 0,
+            behavior: 'smooth', // You can use 'auto' for instant scrolling
+          });
+    }
+
+    else if( current == 0){
+        prev = thumbnails.length - 1;
+        document.querySelector('.thumbnails').scrollTo({
+            right: 0,
+            behavior: 'smooth', // You can use 'auto' for instant scrolling
+          });
+    }
+
+
+    else if (prev < current) {
         
         document.querySelector('.thumbnails').scrollTo({
             left: scroll_curr += scroll_step,
@@ -91,5 +114,13 @@ for (let i = 0; i <= thumbnails.length; i++) {
           });
           prev = current;
     }
+    else if (prev > current) {
+        
+        document.querySelector('.thumbnails').scrollTo({
+            left: scroll_curr -= scroll_step,
+            behavior: 'smooth', // You can use 'auto' for instant scrolling
+          });
+          prev = current;
+    }
     
-}}, 2000);
+}}, 300);
