@@ -81,7 +81,7 @@ body {
 }
 
 .thumbnails img {
-    width: 100px;
+    min-width: 100px;
     height: 100px;
     cursor: pointer;
     border: 2px solid black;
@@ -100,18 +100,3 @@ body {
     transition: 2s opacity ease-in-out;
     transition: 2s;
 }
-
-/* .display > .image-container >img.active {
-    opacity: 1;
-    /* transition: 200ms opacity ease-in-out; /*/
-} */
-
-
- /* .thumbnails {
-    opacity: 0.8;
-  } */
-  
- 
-  /* .thumbnails:hover {
-    opacity: 1;
-  } */
